@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI","Roboto","Oxygen","Helvetica Neue",sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.App {
+  text-align: center;
+}
+
+.card {
+  width: 60%;
+  border: 2px solid #000;
+  margin: 40px 0 30px;
+  text-align: left;
+  padding: 5px 30px;
+  line-height: 1.5rem;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.user:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.user-list {
+  width: 30%;
+}
+
+.button {
+  width: 150px;
+  padding: 4%;
+}
+
+.button:hover {
+  background-color: white;
+  color: red;
+  cursor: pointer;
+}
