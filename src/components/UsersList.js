@@ -14,7 +14,7 @@ function UsersList({ users, isLoading }) {
     <>
       {isLoading && <img src={spinner} alt="loading" />}
       {users.map((userLink, i) => (
-        <li onClick={handleClick} key={i} value={i}>
+        <li className="userLink" onClick={handleClick} key={i} value={i}>
           {userLink.name.first} {userLink.name.last}
         </li>
       ))}
