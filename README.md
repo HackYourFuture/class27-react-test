@@ -21,7 +21,7 @@ http://hyf-react-test.herokuapp.com/
 - Add a **loading state** when the data is fetching (find a loading spinner by Googling)
 - Add an **error message** in the UI if something went wrong
 
-### Duration
+### Duration 
 
 This test will last **2 hours**.
 
