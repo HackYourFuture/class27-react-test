@@ -1,7 +1,16 @@
-import React from "react";
+import React, { Component } from "react";
+import FetchData from "./components/FetchData"
 
-function App() {
-  return <div>Good luck with the test students!</div>;
+
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <FetchData />
+      </div>
+    );
+  }
 }
 
 export default App;
