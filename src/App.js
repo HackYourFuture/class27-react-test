@@ -1,7 +1,9 @@
 import React from "react";
-
+import RandomUser from './RandomUser'
 function App() {
-  return <div>Good luck with the test students!</div>;
+  return <div>
+    <RandomUser />
+  </div>;
 }
 
 export default App;
