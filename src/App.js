@@ -1,7 +1,12 @@
-import React from "react";
+import React from 'react';
+import LoadUsers from './Components/UserList';
 
 function App() {
-  return <div>Good luck with the test students!</div>;
+  return (
+    <div>
+      <LoadUsers></LoadUsers>
+    </div>
+  );
 }
 
 export default App;
