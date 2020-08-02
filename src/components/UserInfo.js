@@ -1,25 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-function UserInfo({ users }) {
-  return (
-    <div className="card">
+function UserInfo({ user }) {
+    return (
+      <div className="card">
       <img
         className="card-img-top"
-        src={users[0].picture.large}
+        src={user.picture.large}
         alt="user image"
       />
       <div className="card-body">
         <h3>
-          {users[0].name.first} {users[0].name.last}
+          {user.name.first} {user.name.last}
         </h3>
-        <p>{users[0].email}</p>
-        <p>{users[0].phone}</p>
+        <p>{user.email}</p>
+        <p>{user.phone}</p>
         <p>
-          {users[0].location.city} {users[0].location.country}
+          {user.location.city} {user.location.country}
         </p>
       </div>
     </div>
-  );
+    )
 }
 
 export default UserInfo;

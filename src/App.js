@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Loader from "react-loader-spinner";
 import Button from "./components/Button.js";
@@ -23,6 +23,8 @@ function App() {
       setError(true);
     }
   };
+  
+
   return (
     <div className="main">
       <Button className="button" fetchUser={fetchUser}></Button>
@@ -43,7 +45,6 @@ function App() {
         )}
       </div>
       <div>{users.length !== 0 && <List users={users}></List>}</div>
-      <div>{users.length !== 0 && <UserInfo users={users}></UserInfo>}</div>
     </div>
   );
 }

@@ -14,3 +14,7 @@ button {
 .card {
     margin: 2rem;
 }
+.list {
+  cursor: pointer;
+  width: 25rem
+}
