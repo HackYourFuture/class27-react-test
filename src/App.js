@@ -1,7 +1,14 @@
 import React from "react";
+import "./App.css";
+import { Header } from './components/Header';
+import RandomUserApp from "./components/RandomUserApp";
 
 function App() {
-  return <div>Good luck with the test students!</div>;
+  return (
+    <div className="app">
+      <Header />
+      <RandomUserApp />
+    </div>);
 }
 
 export default App;
