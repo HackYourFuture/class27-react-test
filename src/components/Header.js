@@ -1,7 +1,8 @@
 import React from 'react'
 
 export const Header = () => {
-  return (<>
+  return (
+  <>
     <h1>
       Random User Information
     </h1>
