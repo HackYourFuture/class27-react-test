@@ -52,7 +52,7 @@ const RandomUserApp = () => {
       {isLoading && <Loader type="Puff" color="blue" height="60" width="60" />}
       {hasError.isError && <p style={{ color: "red" }}>{hasError.errorMsg}!</p>}
       {!isLoading && !hasError.isError && <UsersNameList users={users} getUserSelectedInfo={getUserSelectedInfo} />}
-      {status === "success" && <Card selectedUser={selectedUser} />}
+      {!isLoading && status === "success" && <Card selectedUser={selectedUser} />}
     </div>
   );
 };
