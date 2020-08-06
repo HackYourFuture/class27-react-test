@@ -10,31 +10,35 @@ export default function Card({ selectedUser }) {
     login: { username } } = selectedUser[0];
 
   return (
-    <div className="card">
-      <table >
+      <table className="card">
         <tbody>
           <tr>
             <td></td><td><img src={medium} alt={username} /></td>
           </tr>
           <tr>
-            <td>Name : </td><td>{first}</td>
+            <th scope="row">Name : </th>
+            <td>{first}</td>
           </tr>
           <tr>
-            <td>Surname : </td><td>{last}</td>
+            <th scope="row">Surname : </th>
+            <td>{last}</td>
           </tr>
           <tr>
-            <td>Gender : </td><td>{gender}</td>
+            <th scope="row">Gender : </th>
+            <td>{gender}</td>
           </tr>
           <tr>
-            <td>Phone : </td><td>{phone}</td>
+            <th scope="row">Phone : </th>
+            <td>{phone}</td>
           </tr>
           <tr>
-            <td>Email : </td><td>{email}</td>
+            <th scope="row">Email : </th>
+            <td>{email}</td>
           </tr>
           <tr>
-            <td>Address: </td><td>{country}</td>
+            <th scope="row">Address: </th>
+            <td>{country}</td>
           </tr>
         </tbody>
-      </table>
-    </div>);
+      </table>);
 }
