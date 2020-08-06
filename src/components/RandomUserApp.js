@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Button from "./Button";
+import React, { useState, useEffect } from "react";
+import GetUsersButton from "./GetUsersButton";
 import { UsersNameList } from "./UsersNameList";
 import Card from './Card';
 import Loader from 'react-loader-spinner';
@@ -9,7 +9,19 @@ const RandomUserApp = () => {
   const [selectedUser, setSelectedUser] = useState({});
   const [status, setStatus] = useState("");
   const [isLoading, setLoading] = useState(false);
-  const [isError, setError] = useState(false);
+  const [hasError, setError] = useState(
+    {
+      isError: false,
+      errorMsg: ""
+    }
+  );
+
+  useEffect(() => {
+    if (users.length > 0) {
+      setSelectedUser(users[0]);
+      setStatus("success");
+    }
+  }, [users]);
 
   const fetchUsersData = async () => {
     try {
@@ -18,23 +30,28 @@ const RandomUserApp = () => {
       const userData = await response.json();
       setUsers(userData.results);
     } catch (error) {
-      setError(true);
+      setError(
+        {
+          isError: true,
+          errorMsg: error.message
+        }
+      );
     } finally {
       setLoading(false)
     }
   }
 
   const getUserSelectedInfo = id => {
-    const selected = users.filter(user => user.id.value === id);
-    setSelectedUser(selected);
+    const selectedUser = users.filter(user => user.id.value === id);
+    setSelectedUser(selectedUser[0]);
     setStatus("success");
   };
   return (
     <div className="container">
-      <Button fetchUsersData={fetchUsersData} />
+      <GetUsersButton fetchUsersData={fetchUsersData} />
       {isLoading && <Loader type="Puff" color="blue" height="60" width="60" />}
-      {isError && <p style={{ color: "red" }}>Something Went Wrong!</p>}
-      {!isLoading && <UsersNameList users={users} getUserSelectedInfo={getUserSelectedInfo} />}
+      {hasError.isError && <p style={{ color: "red" }}>{hasError.errorMsg}!</p>}
+      {!isLoading && !hasError.isError && <UsersNameList users={users} getUserSelectedInfo={getUserSelectedInfo} />}
       {status === "success" && <Card selectedUser={selectedUser} />}
     </div>
   );
