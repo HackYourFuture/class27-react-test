@@ -5,7 +5,7 @@ import RandomUserApp from "./components/RandomUserApp";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Header />
       <RandomUserApp />
     </div>);
