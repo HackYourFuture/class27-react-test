@@ -1,24 +1,18 @@
-import React, { useState, useEffect } from "react";
-import User from "./User";
-import spinner from "../images/spinner.gif";
+import React from "react";
 
-function UsersList({ users, isLoading }) {
-  const [user, setUser] = useState(null);
-  const handleClick = (e) => {
-    setUser(users[e.target.value]);
-  };
-  useEffect(() => {
-    setUser(users[0]);
-  }, [users]);
+function UsersList({ users, handleClick }) {
   return (
     <>
-      {isLoading && <img src={spinner} alt="loading" />}
-      {users.map((userLink, i) => (
-        <li className="userLink" onClick={handleClick} key={i} value={i}>
-          {userLink.name.first} {userLink.name.last}
+      {users.map((user, index) => (
+        <li
+          className="userLink"
+          onClick={handleClick}
+          key={user.login.uuid}
+          value={index}
+        >
+          {user.name.first} {user.name.last}
         </li>
       ))}
-      <User user={user} />
     </>
   );
 }

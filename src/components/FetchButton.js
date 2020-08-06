@@ -1,18 +1,20 @@
 import React from "react";
 
-function FetchButton({ getUsers, setIsError, setIsLoading, setErrorMessage }) {
+function FetchButton({ setUsers, setHasError, setIsLoading, setErrorMessage }) {
   const URL = "https://randomuser.me/api/?results=5";
   const fetchUsers = async () => {
     try {
       setIsLoading(true);
-      setIsError(false);
+      setHasError(false);
       setErrorMessage("");
       const response = await fetch(URL);
       const { results } = await response.json();
       setIsLoading(false);
-      getUsers(results);
+      console.log(results);
+      setUsers(results);
     } catch (error) {
-      setIsError(true);
+      setHasError(true);
+      setIsLoading(false);
       let message;
       if (error.response) {
         message = error.response.data.message;
