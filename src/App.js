@@ -15,10 +15,9 @@ function App() {
   const [user, setUser] = useState(null);
 
   const handleClick = (e) => {
-    setUser(users[e.target.value]);
+    setUser(users[e.target.getAttribute('index')]);
   };
   useEffect(() => {
-    console.log(users);
     if (users.length > 0) {
       setUser(users[0]);
     }

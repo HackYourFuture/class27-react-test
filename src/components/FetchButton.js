@@ -10,7 +10,6 @@ function FetchButton({ setUsers, setHasError, setIsLoading, setErrorMessage }) {
       const response = await fetch(URL);
       const { results } = await response.json();
       setIsLoading(false);
-      console.log(results);
       setUsers(results);
     } catch (error) {
       setHasError(true);

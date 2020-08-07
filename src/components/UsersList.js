@@ -8,7 +8,7 @@ function UsersList({ users, handleClick }) {
           className="userLink"
           onClick={handleClick}
           key={user.login.uuid}
-          value={index}
+          index={index}
         >
           {user.name.first} {user.name.last}
         </li>
