@@ -1,5 +1,5 @@
 import React from "react";
-import Friend from "./components/fetchedData";
+import Friend from "./components/Api";
 
 function App() {
   return (

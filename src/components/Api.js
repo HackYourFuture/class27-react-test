@@ -18,7 +18,8 @@ const Friend = () => {
           country: res.results[0].location.country,
           phone: res.results[0].phone,
         });
-        setIsLoading(true);
+        setIsLoading(false);
+        console.log(res);
       })
       .catch((err) => {
         setError(true);
@@ -40,8 +41,9 @@ const Friend = () => {
 const FriendProfile = ({ friend }) => {
   return (
     <ul>
-      <li>First name: {friend.firstName}</li>
-      <li>Last name: {friend.lastName}</li>
+      <li>
+        name: {friend.firstName} {friend.lastName}
+      </li>
       <li>Address: {friend.address}</li>
       <li>Country: {friend.country}</li>
       <li>Email: {friend.email}</li>
